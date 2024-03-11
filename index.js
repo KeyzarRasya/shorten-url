@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose')
 const Url = require('./model/Url')
+const path = require('path')
 
 mongoose.connect(process.env.MONGO_URI)
 .then(res => console.log('Connected'))
@@ -13,7 +14,7 @@ const PORT = process.env.PORT || 3001
 const isAvail = async(req, res, next) => {
     const {real} = req.body;
     const findUrl = await Url.findOne({url:real})
-    if(!findUrl){
+    if(!findUrl ){
         return next()
     }
     return res.redirect('/')
@@ -24,6 +25,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.static('views'))
 
 app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, "views"))
 
 app.get('/', (req, res) => {
     res.render('home', {base:process.env.BASE_ADDRESS})
