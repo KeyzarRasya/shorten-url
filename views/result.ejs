@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Congratulations!</title>
+</head>
+<body class="h-screen w-screen flex justify-center items-center">
+    <div class="w-3/6 h-2/6  flex flex-col items-center">
+        <h1 class="text-2xl text-sky-400">Congratulations!, here's your shortened link</h1>
+        <a class="mt-10 underline text-xl text-blue-500 hover:text-blue-700" href="<%= newUrl.shortUrl  %>"><%= newUrl.shortUrl  %></a>
+        <a href="/" class="w-2/6 h-10 bg-sky-400 flex justify-center items-center hover:text-sky-400 hover:border-2 hover:border-sky-400 hover:bg-white text-white mt-10">Back</a>
+    </div>
+</body>
+</html>

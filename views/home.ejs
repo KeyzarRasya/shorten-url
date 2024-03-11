@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Shorten ur URL</title>
+</head>
+<body class='h-screen w-screen flex justify-center items-center'>
+    <form action="/create" method="post" class="w-3/6 h-5/6 flex flex-col p-5 items-center">
+        <h1 class="text-2xl">Shorten your URL</h1>
+        <input class="w-5/6 border-b-2 border-sky-300 h-10 mt-24 focus:outline-none focus:border-b-4" type="text" placeholder="Real URL" name="real">
+        <div class="w-5/6 flex h-10 mt-14">
+            <div class="w-2/6 border-b-2 border-sky-400"><%= base %></div>
+            <input class="w-4/6 border-b-2 border-sky-400 h-10 focus:outline-none focus:border-b-4" type="text" placeholder="Shorten URL" name="shorten">
+        </div>
+        <button class="mt-12 w-5/6 h-12 bg-sky-400 text-white hover:text-sky-400 hover:border-2 hover:border-sky-400 hover:bg-white">Make</button>
+    </form>
+</body>
+</html>
