@@ -28,13 +28,13 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, "views"))
 
 app.get('/', (req, res) => {
-    res.render('home', {base:process.env.BASE_ADDRESS})
+    res.render('home', {base:'https://shorten-url-snowy.vercel.app/'})
 })
 
 
 app.post('/create', isAvail, async(req, res) => {
     const {real, shorten} = req.body;
-    const shortUrl = `${process.env.BASE_ADDRESS}${shorten}`
+    const shortUrl = `https://shorten-url-snowy.vercel.app/${shorten}`
     const newUrl = new Url({realUrl:real, shortUrl, shorten})
     await newUrl.save();
     res.render('result', {newUrl})
